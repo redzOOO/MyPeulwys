@@ -1,4 +1,4 @@
-Peulwys Community App
+# Peulwys Community App
 Peulwys Community App is a community-driven mobile application designed to keep residents informed and connected within the Peulwys Estate in North Wales. This app provides vital estate information, event announcements, collection schedules, and community conversations. It aims to foster collaboration and improve communication among residents, offering a convenient platform to share updates and interact with the community.
 
 Features
@@ -23,7 +23,7 @@ Bin Collection Page:
 Displays the collection schedule for various types of waste:
 Recycling Waste (Green Bins & Food Waste) - Weekly.
 Textiles and Electrical Items (Purple/Pink Bags) - Fortnightly.
-General Waste (Black Bins) - Four Weekly.
+General Waste (Black Bins) - Every Four Weeks.
 Icons are used to visually distinguish different collection types.
 Displays the current date and the next collection schedule with its details.
 Ability to add the collection schedule to an ICS calendar file for residents' convenience.
@@ -59,3 +59,41 @@ Header and Footer:
 
 The app includes a prominent header with the title "Peulwys Community."
 A footer with the message "For the residents, by the residents" to emphasize community involvement.
+Installation
+Clone this repository:
+
+bash
+Copy code
+git clone https://github.com/your-username/peulwys_community_app.git
+Navigate to the project directory:
+
+bash
+Copy code
+cd peulwys_community_app
+Install the dependencies:
+
+bash
+Copy code
+flutter pub get
+Run the application on a device or emulator:
+
+bash
+Copy code
+flutter run
+Firebase Integration
+The app is integrated with Firebase for announcements, community conversations, and data storage (Firestore).
+Firebase initialization is required before running the app. Ensure Firebase is configured properly by running:
+bash
+Copy code
+flutterfire configure
+Roadmap
+User Authentication: Implement user sign-up and login for residents to participate in conversations and announcements.
+Push Notifications: Notify residents of new announcements and collection schedules.
+Admin Tools: Enable certain users (e.g., CLOs) to moderate conversations and manage announcements.
+Contributions
+Contributions are welcome! Feel free to open issues or submit pull requests for enhancements and bug fixes.
+
+License
+This project is licensed under the MIT License.
+
+Enjoy connecting with your neighbors through the Peulwys Community App!
