@@ -5,6 +5,8 @@ class ResidentInteractionPage extends StatelessWidget {
   final TextEditingController messageController = TextEditingController();
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
+  ResidentInteractionPage({super.key});
+
   // Fetch posts from Firestore
   Stream<QuerySnapshot> getPosts() {
     return firestore.collection('posts').orderBy('timestamp', descending: true).snapshots();
@@ -24,7 +26,7 @@ class ResidentInteractionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Resident Interaction'),
+        title: const Text('Resident Interaction'),
       ),
       body: Column(
         children: [
@@ -33,7 +35,7 @@ class ResidentInteractionPage extends StatelessWidget {
               stream: getPosts(),
               builder: (context, snapshot) {
                 if (!snapshot.hasData) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }
                 final posts = snapshot.data!.docs;
                 return ListView.builder(
@@ -59,13 +61,13 @@ class ResidentInteractionPage extends StatelessWidget {
                 Expanded(
                   child: TextField(
                     controller: messageController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Your message',
                     ),
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.send),
+                  icon: const Icon(Icons.send),
                   onPressed: () {
                     // Add a new post with sample firstName and lastName
                     addPost('John', 'Doe', messageController.text);
